@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")  // http://localhost:8080/users
 public class UserController {
 
-    @GetMapping
-    public String getUser() {
-        return "get user was called";
+    @GetMapping(path = "/{userId}")
+    public String getUser(@PathVariable String userId) {
+        return "get user was called with userId = " + userId;
     }
 
     @PostMapping
@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    public String deteleUser() {
+    public String deleteUser() {
         return "delete user was called";
     }
 
