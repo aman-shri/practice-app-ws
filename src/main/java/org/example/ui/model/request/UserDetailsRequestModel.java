@@ -7,9 +7,11 @@ import jakarta.validation.constraints.Size;
 public class UserDetailsRequestModel {
 
     @NotNull(message = "First name cannot be null")
+    @Size(min=2, message = "First name must not be less than 2 characters")
     private String firstName;
     
     @NotNull(message = "Last name cannot be null")
+    @Size(min=2, message = "Last name must not be less than 2 characters")
     private String lastName;
     
     @NotNull(message = "Email cannot be null")
