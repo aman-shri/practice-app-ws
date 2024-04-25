@@ -33,6 +33,12 @@ public class UserController {
                     MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
 
+        String firstName = null;
+        //
+        //
+        int firstNameLength = firstName.length();
+
+
         if(users.containsKey(userId)){
             return new ResponseEntity<>(users.get(userId), HttpStatus.OK);
         } else {
