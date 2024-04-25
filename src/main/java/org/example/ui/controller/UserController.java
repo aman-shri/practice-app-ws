@@ -2,6 +2,7 @@ package org.example.ui.controller;
 
 
 import jakarta.validation.Valid;
+import org.example.ui.exceptions.UserServiceException;
 import org.example.ui.model.request.UpdateUserDetailsRequestModel;
 import org.example.ui.model.request.UserDetailsRequestModel;
 import org.example.ui.model.response.UserRest;
@@ -33,11 +34,7 @@ public class UserController {
                     MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
 
-        String firstName = null;
-        //
-        //
-        int firstNameLength = firstName.length();
-
+        if(true) throw new UserServiceException("A user service exception is thrown");
 
         if(users.containsKey(userId)){
             return new ResponseEntity<>(users.get(userId), HttpStatus.OK);
